@@ -2,7 +2,7 @@
     "Name": "Express-guestbook",
     "private": true,
     "sripts": {
-        "start": "node app"
+        "start": "node app.js"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
