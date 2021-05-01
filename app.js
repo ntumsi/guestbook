@@ -29,9 +29,11 @@ app.post("/new-entry", function(request, response){
         body: request.body.body,
         published: new Date()
     })
-    request.redirect("/");
+    console.log(entries);
+    // request.redirect("/");
 })
-app.use(function(request, responese){
+
+app.use(function(request, response){
     response.status(404).render("404");
 })
 http.createServer(app).listen(3000, function(){
