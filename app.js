@@ -3,12 +3,20 @@ var path = require("path");
 var express = require("express");
 var logger = require("morgan");
 const ejsLint = require('ejs-lint');
-
 var app = express();
+const localStorage = require('node-localstorage')
+ 
+const entry ={
+    title: "",
+    body: "",
+    date: new Date()
+}
+
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
+
 var entries = []
-app.locals.entries = entries;
+// app.locals.entries = entries;
 app.use(logger("dev"));
 app.use(express.json());
 app.get("/", function(request, response){
@@ -18,15 +26,20 @@ app.get("/new-entry", function(request, response){
     response.render("new-entry");
 })
 app.post("/new-entry", function(request, response){
+     
     if(!request.body.title || !request.body.body){
         response.status(400).send("Entries must have a title and a body");
         return;
     }
-   request.entries.push({
-        title: request.body.title,
-        body: request.body.body,
-        published: new Date()
-    })
+   entries = request.localStorage.setItem( 'data', JSON.stringify(entry));
+    
+    // entries.push("data")
+    
+//    request.entries.push({
+//         title: request.body.title,
+//         body: request.body.body,
+//         published: new Date()
+//     })
     console.log(entries);
     response.redirect("/");
 })
