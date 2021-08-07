@@ -1,15 +1,31 @@
 {
-    "Name": "Express-guestbook",
-    "private": true,
-    "sripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "bootstrap": "^5.0.0-beta3",
-        "ejs": "^3.1.6",
-        "ejs-lint": "^1.2.0",
-        "express": "^4.17.1",
-        "morgan": "^1.10.0"
-    }
+  "name": "guestbook",
+  "version": "1.0.0",
+  "description": "A sample guest book",
+  "main": "app.js",
+
+  "scripts": {
+    "start": "node app.js"
+    
+  },
+
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.0-beta3",
+    "ejs": "^3.1.6",
+    "ejs-lint": "^1.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntumsi/guestbook.git"
+  },
+  "author": "Lah Ntumsi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntumsi/guestbook/issues"
+  },
+  "homepage": "https://github.com/ntumsi/guestbook#readme"
 }
