@@ -1,16 +1,16 @@
-var http = require("http");
-var path = require("path");
-var express = require("express");
-var logger = require("morgan");
-var bodyparser = require("body-parser");
+let http = require("http");
+let path = require("path");
+let express = require("express");
+let logger = require("morgan");
+let bodyparser = require("body-parser");
 const bodyParser = require("body-parser");
 
-var app = express();
+let app = express();
 
 app.set("views", path.resolve(__dirname, "views"));
 
 app.set("view engine", "ejs");
-var entries = []
+let entries = []
 
 app.locals.entries = entries;
 
